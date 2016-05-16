@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {browserHistory} from 'react-router';
 
 export default class Begin extends React.Component {
@@ -6,14 +6,14 @@ export default class Begin extends React.Component {
     super(props);
   }
 
-  _runClock() {
-    browserHistory.push('/clock');
+  _runQuiz() {
+    browserHistory.push('/quiz');
   }
 
   render() {
     return (
       <button>
-        <span className= "buttonupcase" onClick= {this._runClock}> Begin Evaluation </span>
+        <span className= "buttonupcase" onClick= {this._runQuiz}> Begin Evaluation </span>
       </button>
     )
   }
