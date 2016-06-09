@@ -5,45 +5,40 @@ export default class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      seconds: 60
+      seconds: 0
     }
   }
 
   _countdown() {
     this.setState({seconds: this.state.seconds - 1});
+    if (this.state.seconds <= 0) {
+      clearInterval(this.clock);
+      browserHistory.push('/lose');
+    }
   }
 
   _renderMinutes() {
     let minutes = Math.floor(this.state.seconds / 60);
     let seconds = this.state.seconds % 60;
     seconds = seconds < 10 ? '0' + seconds : seconds;
+
     return (<div>{minutes}:{seconds}</div>)
   }
 
-  _fail() {
-    this.props.navigate("fail")
-  }
-
   componentDidMount() {
-    this.interval = setInterval(this._countdown.bind(this), 1000);
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if( this.state.secondsElapsed === 0 ) {
-      clearInterval(this.interval);
-      this._rejected();
-    }
+    this.setState({ seconds: this.props.seconds });
+    this.clock = setInterval(this._countdown.bind(this), 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval);
+    clearInterval(this.clock);
   }
 
   render() {
     return (
       <div className= "clock">
         <span>
-          {this._renderMinute()}
+          {this._renderMinutes()}
         </span>
       </div>
     )
