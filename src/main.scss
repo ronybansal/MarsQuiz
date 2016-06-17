@@ -1,60 +1,6 @@
-html, body {
-  width: 100vw;
-  height: 100vh;
-  color: white;
-  background: url(http://www.westcoasttrustsestates.com/files/2015/04/I-Stock-Basketball-Court.jpg) no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-button {
-  background: transparent;
-  border: 0;
-}
-
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.buttonupcase {
-  outline: none;
-  border: 2px solid purple;
-  background: #EDF1F2;
-  padding: 1rem 4rem;
-  color: blue;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
-  text-transform: uppercase;
-  border-radius: 2px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.question-area {
-  width: 80%;
-  margin: 0 auto;
-  padding: 2rem;
-  font-size: 1.5rem;
-  background: white;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  color: #969696;
-  line-height: 1.25;
-}
-
-.submitbox {
-  outline: none;
-  border: 2px solid purple;
-  background: #EDF1F2;
-  padding: 1rem 4rem;
-  color: blue;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
-  text-transform: uppercase;
-  border-radius: 2px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+@import "styles/body";
+@import "styles/button";
+@import "styles/quiz";
+@import "styles/sidebar";
+@import "styles/lose";
+@import "styles/win";

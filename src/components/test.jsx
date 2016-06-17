@@ -9,11 +9,9 @@ export default class Test extends React.Component {
 
   render() {
     return (
-      <div className= "button">
-        <button>
-          <span className= "buttonupcase" onClick= {this._loadBegin}> Take Test </span>
-        </button>
-      </div>
+      <button className= "button" onClick= {this._loadBegin}>
+        Take Test
+      </button>
     )
   }
 }

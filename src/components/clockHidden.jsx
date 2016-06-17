@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {browserHistory} from 'react-router';
 
-export default class Clock extends React.Component {
+export default class ClockHidden extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,7 +38,7 @@ export default class Clock extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <div className= "clock">
+      <div className= "clockHidden">
         <span>
           {this._renderMinutes()}
         </span>

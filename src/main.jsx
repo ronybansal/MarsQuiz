@@ -9,6 +9,8 @@ require('./reset.scss');
 import Test from './components/test';
 import Begin from './components/begin';
 import Quiz from './components/quiz';
+import Lose from './components/lose';
+import Win from './components/win';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +24,8 @@ class App extends React.Component {
         <Route path='/test' component={Test} />
         <Route path='/begin' component={Begin} />
         <Route path= '/quiz' component={Quiz} />
+        <Route path= '/lose' component={Lose} />
+        <Route path= '/win' component= {Win} />
       </Router>
     )
   }

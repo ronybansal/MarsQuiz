@@ -30,8 +30,12 @@ constructor(props) {
 
   _submitAnswer(){
     this.refs.quizInput.value === questions[this.state.question].answer ? answer += 1 : correct;
-    this.setState({ question: this.state.question += 1});
-    this.refs.quizInput.value = '';
+
+		if (!this._isFinished()) {
+    	this.setState({ question: this.state.question += 1});
+		}
+
+		this.refs.quizInput.value = '';
   }
 
   _submitted(e) {
@@ -58,12 +62,20 @@ constructor(props) {
     }
   }
 
+	_isFinished() {
+		return this.state.question >= questions.length
+	}
+
   render(){
+		if (this._isFinished()) {
+			return null;
+		}
+		const {question} = questions[this.state.question];
     return (
       <div>
         {this._displaying()}
           <div className="question-area">
-            <p className="question">{questions[this.state.question].question}</p>
+            <p className="question">{question}</p>
             <div className="answers">
               <form className="user-answers" name="quizInput" onSubmit={this._submitted.bind(this)}>
                 <input type='text' ref="quizInput"/>
