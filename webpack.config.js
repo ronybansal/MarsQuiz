@@ -5,7 +5,7 @@ module.exports = {
         main: './src/main.jsx',
     },
     output: {
-        filename: '[name].js',
+        filename: './build/[name].js',
         publicPath: '/build/'
     },
     devtool: '#source-map',
